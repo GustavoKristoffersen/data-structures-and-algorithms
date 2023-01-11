@@ -1,3 +1,4 @@
+// On an unordered array
 function linearSearch(arr, value) {
     for(let i=0; i < arr.length; i++) {
         if(arr[i] == value){
@@ -7,13 +8,13 @@ function linearSearch(arr, value) {
     return -1;
 }
 
-
+// On an ordered array
 function linearSearch(arr, value) {
-    for(let i=0; i < arr.length; i++) {
-        if(arr[i] == value) {
+    for (let i=0; i < arr.length; i++) {
+        if (arr[i] == value) {
             return i;
         }
-        else if(arr[i] > value) {
+        else if (arr[i] > value) {
             break;
         }
     }

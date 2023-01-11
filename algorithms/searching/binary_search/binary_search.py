@@ -9,7 +9,7 @@ def binary_search(arr, value):
             return middle_index
         elif middle_value > value:
             right_index = middle_index - 1
-        elif middle_value < value:
+        else:
             left_index = middle_index + 1
 
     return -1
