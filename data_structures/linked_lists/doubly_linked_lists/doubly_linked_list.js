@@ -2,6 +2,7 @@ class Node {
     constructor(value) {
         this.value = value;
         this.next = null;
+        this.previous = null;
     }
 }
 
@@ -36,6 +37,7 @@ class LinkedList {
         else {
             this.tail.next = node;
         }
+        node.previous = this.tail;
         this.tail = node;
         this.length++;
         return this;
@@ -59,6 +61,8 @@ class LinkedList {
             let rightNode = leftNode.next;
             leftNode.next = newNode;
             newNode.next = rightNode;
+            newNode.previous = leftNode;
+            rightNode.previous = newNode;
         }
         this.length++;
         return this;
@@ -72,11 +76,15 @@ class LinkedList {
         }
         else if (index === 0){
             this.head = this.head.next;
+            this.head.previous = null;
+            this.head.next.previous = this.head;
         }
         else {
             let leftNode = this.getNodeAtIndex(index - 1);
             let nodeToBeDeleted = leftNode.next;
-            leftNode.next = nodeToBeDeleted.next;
+            let rightNode = nodeToBeDeleted.next;
+            leftNode.next = rightNode;
+            rightNode.previous = leftNode;
             if (nodeToBeDeleted === this.tail) {
                 this.tail = leftNode;
             }
@@ -103,5 +111,6 @@ class LinkedList {
             currentNode = currentNode.next
         }
         console.log(array);
-      }
+    }
+    
 }
