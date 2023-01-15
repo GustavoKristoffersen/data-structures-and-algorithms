@@ -1,11 +1,8 @@
-import numpy as np
-
-
 class Array:
   def __init__(self, capacity):
     self.capacity = capacity
     self.last_position = -1
-    self.values = np.empty(self.capacity, dtype=int)
+    self.values = [None] * capacity
 
   # O(n)
   def print(self):
