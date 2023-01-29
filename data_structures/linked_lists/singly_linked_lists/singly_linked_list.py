@@ -7,16 +7,13 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
-        self.tail = None
         self.length = 0
 
     def _is_empty(self):
-        return self.head is None and self.tail is None
+        return self.head is None
 
     def prepend(self, value):
         node = Node(value)
-        if self._is_empty():
-            self.tail = node
         node.next = self.head
         self.head = node
         self.length += 1
@@ -26,8 +23,11 @@ class LinkedList:
         node = Node(value)
         if self._is_empty():
             self.head = node
-        self.tail.next = node
-        self.tail = node
+        else:
+            current_node = self.head
+            while current_node.next is not None:
+                current_node = current_node.next
+            current_node.next = node
         self.length += 1
         return self
 
@@ -40,7 +40,7 @@ class LinkedList:
             return self.prepend(value)
         new_node = Node(value)
         if self._is_empty():
-            self.head = self.tail = new_node
+            self.head = new_node
         else:
             left_node = self._get_node_at_index(index - 1)
             right_node = left_node.next
@@ -60,8 +60,6 @@ class LinkedList:
             left_node = self._get_node_at_index(index - 1)
             node_to_delete = left_node.next
             left_node.next = node_to_delete.next
-            if node_to_delete == self.tail:
-                self.tail = left_node
         self.length -= 1
         return self
 
@@ -82,19 +80,18 @@ class LinkedList:
         print(array)
     
     def reverse(self):
-        if self._is_empty() or self.length == 1:
+        if self.length == 1 or self._is_empty():
             return self
-        self.tail = self.head
-        first = self.head
-        second = first.next
-        while second:
-            third = second.next
-            second.next = first
-            first = second
-            second = third
-        self.head = first
-        self.tail.next = None
+        current_node = self.head
+        previous_node = None
+        while current_node is not None:
+            next_node = current_node.next
+            current_node.next = previous_node
+            previous_node = current_node
+            current_node = next_node
+        self.head = previous_node
         return self
+
 
 
 
