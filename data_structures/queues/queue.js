@@ -13,9 +13,14 @@ class Queue {
         this.length = 0;
     }
 
+    _isEmpty() {
+        return this.first == null && this.last == null;
+    }
+
+    // O(1)
     enqueue(value) {
         let newNode = new Node(value);
-        if(this.isEmpty()) {
+        if(this._isEmpty()) {
             this.first = this.last = newNode;
         }
         else {
@@ -25,13 +30,14 @@ class Queue {
         this.length++;
         return this;
     }
-
+    
+    // O(1)
     dequeue() {
-        if(this.isEmpty()) {
+        if(this._isEmpty()) {
             return null;
         }
         else if (this.length === 1) {
-            this.first = null;
+            this.last = null;
         }
         let nodeToPop = this.first;
         this.first = nodeToPop.next;
@@ -39,8 +45,9 @@ class Queue {
         return nodeToPop;
     }
 
+    // O(1)
     peek() {
-        return this.isEmpty()? null: this.first.value;
+        return this._isEmpty()? null: this.first.value;
     }
 
     printAsList() {
@@ -51,9 +58,5 @@ class Queue {
             currentNode = currentNode.next;
         }
         console.log(array);
-    }
-
-    isEmpty() {
-        return this.first == null && this.last == null;
     }
 }
