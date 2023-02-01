@@ -9,17 +9,22 @@ class Node {
 class LinkedList {
     constructor() {
         this.head = null;
+        this.tail = null;
         this.length = 0;
     }
 
     _isEmpty() {
-        return this.head === null;
+        return this.head === null && this.tail === null;
     }
 
     prepend(value) {
         let node = new Node(value);
+        if (this._isEmpty()) {
+            this.tail = node;
+        }
         node.next = this.head;
         this.head = node;
+        this.length++;
         return this;
     }
 
@@ -27,13 +32,11 @@ class LinkedList {
         let node = new Node(value);
         if (this._isEmpty()) {
             this.head = node;
+            this.tail = node;
         }
         else {
-            let currentNode = this.head;
-            while(currentNode.next !== null) {
-                currentNode = currentNode.next;
-            }
-            currentNode.next = node;
+            this.tail.next = node;
+            this.tail = node;
         }
         this.length++;
         return this;
@@ -49,10 +52,10 @@ class LinkedList {
         else if (index >= this.length) {
             return this.append(value);
         }
-
         let newNode = new Node(value);
         if (this._isEmpty()) {
             this.head = newNode;
+            this.tail = newNode;
         }
         else {
             let leftNode = this._getNodeAtIndex(index - 1);
@@ -65,8 +68,9 @@ class LinkedList {
     }
 
     delete(index) {
-        if (index < 0 || index >= this.length) { return this };
-
+        if (index < 0 || index >= this.length) {
+            return this
+        };
         if (this._isEmpty()) {
             return this;
         }
@@ -77,6 +81,9 @@ class LinkedList {
             let leftNode = this._getNodeAtIndex(index - 1);
             let nodeToBeDeleted = leftNode.next;
             leftNode.next = nodeToBeDeleted.next;
+            if (nodeToBeDeleted === this.tail) {
+                this.tail = leftNode;
+            }
         }
         this.length--;
         return this;
@@ -114,6 +121,7 @@ class LinkedList {
             previousNode = currentNode;
             currentNode = nextNode;
         }
+        this.tail = this.head;
         this.head = previousNode;
         return this;
     }

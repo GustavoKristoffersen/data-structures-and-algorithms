@@ -7,13 +7,16 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.tail = None
         self.length = 0
 
     def _is_empty(self):
-        return self.head is None
+        return self.head is None and self.tail is None
 
     def prepend(self, value):
         node = Node(value)
+        if self._is_empty():
+            self.tail = node
         node.next = self.head
         self.head = node
         self.length += 1
@@ -23,11 +26,10 @@ class LinkedList:
         node = Node(value)
         if self._is_empty():
             self.head = node
+            self.tail = node
         else:
-            current_node = self.head
-            while current_node.next is not None:
-                current_node = current_node.next
-            current_node.next = node
+            self.tail.next = node
+            self.tail = node
         self.length += 1
         return self
 
@@ -41,6 +43,7 @@ class LinkedList:
         new_node = Node(value)
         if self._is_empty():
             self.head = new_node
+            self.tail = new_node
         else:
             left_node = self._get_node_at_index(index - 1)
             right_node = left_node.next
@@ -60,6 +63,8 @@ class LinkedList:
             left_node = self._get_node_at_index(index - 1)
             node_to_delete = left_node.next
             left_node.next = node_to_delete.next
+            if node_to_delete == self.tail:
+                self.tail = left_node
         self.length -= 1
         return self
 
