@@ -1,6 +1,6 @@
 # :bookmark_tabs: About this repository
 
-This is a repository made by me as i was in the process of studying Data Structure and Algorithms. The contents available here can be useful for you if you are also studying the subject or in case you just need to consult something in specific or check some implementations.
+This repository was made as i was in the process of studying Data Structure and Algorithms. The contents available here can be useful for you if you are also studying the subject or in case you just need to consult something in specific or check some implementations.
 
 This repo currently has all the main implementations of the most known data strucures and algorithms in Python and JavaScript, which are the languages i'm most familiar with.
 
