@@ -6,7 +6,7 @@ This repo currently has all the main implementations of the most known data stru
 
 Each folder contains the implementation of the data structure/algorithm and also a readme that contains an explanation of the core concepts of it as well as links to additional resources.
 
-The contents here were based in 3 main sources, which are the following:
+All contents here were based in following sources:
 
 1 - [A Common-Sense Guide to Data Structures and Algorithms](https://github.com/GustavoKristoffersen/data-structures-and-algorithms/blob/main/extras/docs/A%20Common-Sense%20Guide%20to%20Data%20Structures%20and%20Algorithms_%20Level%20Up%20Your%20Core%20Programming%20Skills) - Book by Jay Wengrow
 
