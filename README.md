@@ -2,7 +2,7 @@
 
 This repository was made as i was in the process of studying Data Structure and Algorithms. The contents available here can be useful for you if you are also studying the subject or in case you just need to consult something and check some implementations.
 
-This repo currently has all the main implementations of the most known data strucures and algorithms in Python and JavaScript, which are the languages i'm most familiar with.
+This repo currently has all the main implementations of the most known data strucures and algorithms in Python and JavaScript, which are the languages i'm most familiar with (Rust implementations might appear here someday :eyes:).
 
 Each folder contains the implementation of the data structure/algorithm and also a readme that contains an explanation of the core concepts of it as well as links to additional resources.
 
