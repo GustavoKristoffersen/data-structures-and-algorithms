@@ -13,6 +13,9 @@ class Array {
     
     // O(1)
     pop() {
+      if (!this.length > 0) {
+        return null;
+      }
       let item = this.data[this.length-1];
       delete this.data[this.length-1];
       this.length--;
@@ -21,35 +24,39 @@ class Array {
     
     // O(1)
     get(index) {
-      return this.data[index];
+      return index < this.length? this.data[index]: null;
     }
   
-    performShiftingsToRight(index) {
-      for(let i=this.length - 1; i > index; i--) {
+    _performShiftingsToRight(index) {
+      for(let i=this.length; i > index; i--) {
         this.data[i] = this.data[i-1];
       }
     }
     
     // O(n)
     insert(value, index) {
-      this.length++;
-      this.performShiftingsToRight(index);
+      if (index > this.length) {
+        return null;
+      }
+      this._performShiftingsToRight(index);
       this.data[index] = value;
+      this.length++;
       return this.data;
     }
   
-    performShiftingsToLeft(index) {
+    _performShiftingsToLeft(index) {
       for(let i=index; i < this.length - 1; i++) {
         this.data[i] = this.data[i+1];
       }
-      delete this.data[this.length - 1];
     }
     
     // O(n)
     delete(index) {
-      let item = this.data[index];
-      delete this.data[index];
-      this.performShiftingsToLeft(index);
+      if (index > this.length - 1) {
+        return null;
+      }
+      this._performShiftingsToLeft(index);
+      delete this.data[this.length-1];
       this.length--;
       return this.length;
     }

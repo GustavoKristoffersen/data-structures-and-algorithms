@@ -1,5 +1,5 @@
 // On an unordered array
-function linearSearch(arr, value) {
+const linearSearch = function(arr, value) {
     for(let i=0; i < arr.length; i++) {
         if(arr[i] == value){
             return i;
@@ -9,7 +9,7 @@ function linearSearch(arr, value) {
 }
 
 // On an ordered array
-function linearSearch(arr, value) {
+const linearSearchOnOrderedArr = function(arr, value) {
     for (let i=0; i < arr.length; i++) {
         if (arr[i] == value) {
             return i;
@@ -20,3 +20,7 @@ function linearSearch(arr, value) {
     }
     return -1;
 }
+
+
+// Export functions for use in other files
+module.exports = {linearSearch, linearSearchOnOrderedArr}

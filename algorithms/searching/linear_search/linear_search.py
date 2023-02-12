@@ -6,7 +6,7 @@ def linear_search(arr, value):
     return -1
 
 # Linear search on an ordered array
-def linear_search(arr, value):
+def linear_search_on_ordered_arr(arr, value):
     for i in range(len(arr)):
         if arr[i] == value:
             return i
