@@ -13,35 +13,16 @@ class LinkedList {
         this.length = 0;
     }
 
-    _isEmpty() {
-        return this.head === null && this.tail === null;
+    // O(N)
+    get(index) {
+        if (index < 0 || index >= this.length) {
+            return null;
+        }
+        let node = this._getNodeAtIndex(index);
+        return node.value;
     }
 
-    prepend(value) {
-        let node = new Node(value);
-        if (this._isEmpty()) {
-            this.tail = node;
-        }
-        node.next = this.head;
-        this.head = node;
-        this.length++;
-        return this;
-    }
-
-    append(value) {
-        let node = new Node(value);
-        if (this._isEmpty()) {
-            this.head = node;
-            this.tail = node;
-        }
-        else {
-            this.tail.next = node;
-            this.tail = node;
-        }
-        this.length++;
-        return this;
-    }
-
+    // O(N)
     insert(index, value) {
         if (index < 0) {
             return this;
@@ -67,6 +48,7 @@ class LinkedList {
         return this;
     }
 
+    // O(N)
     delete(index) {
         if (index < 0 || index >= this.length) {
             return this
@@ -89,14 +71,45 @@ class LinkedList {
         return this;
     }
 
-    _getNodeAtIndex(index) {
-        let currentNode = this.head;
+    // O(N)
+    search(value) {
         let position = 0;
-        while (position < index) {
+        let currentNode = this.head;
+        while (currentNode !== null) {
+            if (currentNode.value === value) {
+                return position;
+            }
             currentNode = currentNode.next;
             position++;
         }
-        return currentNode;
+        return -1;
+    }
+
+    // O(1)
+    prepend(value) {
+        let node = new Node(value);
+        if (this._isEmpty()) {
+            this.tail = node;
+        }
+        node.next = this.head;
+        this.head = node;
+        this.length++;
+        return this;
+    }
+
+    // O(1)
+    append(value) {
+        let node = new Node(value);
+        if (this._isEmpty()) {
+            this.head = node;
+            this.tail = node;
+        }
+        else {
+            this.tail.next = node;
+            this.tail = node;
+        }
+        this.length++;
+        return this;
     }
 
     printAsList() {
@@ -124,5 +137,19 @@ class LinkedList {
         this.tail = this.head;
         this.head = previousNode;
         return this;
+    }
+
+    _isEmpty() {
+        return this.head === null && this.tail === null;
+    }
+
+    _getNodeAtIndex(index) {
+        let currentNode = this.head;
+        let position = 0;
+        while (position < index) {
+            currentNode = currentNode.next;
+            position++;
+        }
+        return currentNode;
     }
 }

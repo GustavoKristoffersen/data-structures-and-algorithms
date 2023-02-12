@@ -7,15 +7,63 @@ class Node {
 }
 
 
-class LinkedList {
+class DoublyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
         this.length = 0;
     }
 
-    _isEmpty() {
-        return this.head === null && this.tail === null;
+    // O(N)
+    insert(index, value) {
+        if (index < 0) {return this};
+
+        let newNode = new Node(value);
+        if (this._isEmpty()) {
+            this.head = this.tail = newNode;
+        }
+        else if (index === 0) {
+            return this.prepend(value);
+        }
+        else if (index >= this.length) {
+            return this.append(value);
+        }
+        else {
+            let leftNode = this._getNodeAtIndex(index - 1);
+            let rightNode = leftNode.next;
+            leftNode.next = newNode;
+            newNode.next = rightNode;
+            newNode.previous = leftNode;
+            rightNode.previous = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    // O(N)
+    delete(index) {
+        if (index < 0 || index >= this.length) {return this};
+        
+        if (this._isEmpty()) {
+            return this;
+        }
+        else if (index === 0){
+            this.head = this.head.next;
+            this.head.previous = null;
+            this.head.next.previous = this.head;
+        }
+        else {
+            let leftNode = this._getNodeAtIndex(index - 1);
+            let nodeToBeDeleted = leftNode.next;
+            let rightNode = nodeToBeDeleted.next;
+            leftNode.next = rightNode;
+            rightNode.previous = leftNode;
+            if (nodeToBeDeleted === this.tail) {
+                this.tail = leftNode;
+            }
+        }
+        this.length--;
+        return this;
     }
 
     prepend(value) {
@@ -43,66 +91,6 @@ class LinkedList {
         return this;
     }
 
-    insert(index, value) {
-        if (index < 0) {return this};
-
-        let newNode = new Node(value);
-        if (this._isEmpty()) {
-            this.head = this.tail = newNode;
-        }
-        else if (index === 0) {
-            return this.prepend(value);
-        }
-        else if (index >= this.length) {
-            return this.append(value);
-        }
-        else {
-            let leftNode = this.getNodeAtIndex(index - 1);
-            let rightNode = leftNode.next;
-            leftNode.next = newNode;
-            newNode.next = rightNode;
-            newNode.previous = leftNode;
-            rightNode.previous = newNode;
-        }
-        this.length++;
-        return this;
-    }
-
-    delete(index) {
-        if (index < 0 || index >= this.length) {return this};
-        
-        if (this._isEmpty()) {
-            return this;
-        }
-        else if (index === 0){
-            this.head = this.head.next;
-            this.head.previous = null;
-            this.head.next.previous = this.head;
-        }
-        else {
-            let leftNode = this.getNodeAtIndex(index - 1);
-            let nodeToBeDeleted = leftNode.next;
-            let rightNode = nodeToBeDeleted.next;
-            leftNode.next = rightNode;
-            rightNode.previous = leftNode;
-            if (nodeToBeDeleted === this.tail) {
-                this.tail = leftNode;
-            }
-        }
-        this.length--;
-        return this;
-    }
-
-    getNodeAtIndex(index) {
-        let currentNode = this.head;
-        let position = 0;
-        while (position < index) {
-            currentNode = currentNode.next;
-            position++;
-        }
-        return currentNode;
-    }
-
     printList() {
         const array = [];
         let currentNode = this.head;
@@ -112,5 +100,18 @@ class LinkedList {
         }
         console.log(array);
     }
-    
+
+    _isEmpty() {
+        return this.head === null && this.tail === null;
+    }
+
+    _getNodeAtIndex(index) {
+        let currentNode = this.head;
+        let position = 0;
+        while (position < index) {
+            currentNode = currentNode.next;
+            position++;
+        }
+        return currentNode;
+    }    
 }
