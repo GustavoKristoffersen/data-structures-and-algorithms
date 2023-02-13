@@ -12,6 +12,13 @@ class DoublyLinkedList:
         self.length = 0
 
     # O(N)
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        node = self._get_node_at_index(index)
+        return node.value
+
+    # O(N)
     def insert(self, index, value):
         if index < 0:
             return self
@@ -53,6 +60,17 @@ class DoublyLinkedList:
         self.length -= 1
         return self
 
+    # O(N)
+    def search(self, value):
+        position = 0
+        current_node = self.head
+        while current_node is not None:
+            if current_node.value == value:
+                return position
+            current_node = current_node.next
+            position += 1
+        return -1
+
     def prepend(self, value):
         node = Node(value)
         if self._is_empty():
@@ -84,9 +102,19 @@ class DoublyLinkedList:
         return self.head is None and self.tail is None
 
     def _get_node_at_index(self, index):
-        position = 0
-        current_node = self.head
-        while position < index:
-            current_node = current_node.next
-            position += 1
-        return current_node
+        distance_from_head = index - 1
+        distance_from_tail = self.length - index
+        if distance_from_head < distance_from_tail:
+            position = 0
+            current_node = self.head
+            while position < index:
+                current_node = current_node.next
+                position += 1
+            return current_node
+        else:
+            position = self.length - 1
+            current_node = self.tail
+            while position > index:
+                current_node = current_node.previous
+                position -= 1
+            return current_node

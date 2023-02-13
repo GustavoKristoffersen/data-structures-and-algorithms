@@ -15,6 +15,15 @@ class DoublyLinkedList {
     }
 
     // O(N)
+    get(index) {
+        if (index < 0 || index >= this.length) {
+            return null;
+        }
+        let node = this._getNodeAtIndex(index);
+        return node.value;
+    }
+
+    // O(N)
     insert(index, value) {
         if (index < 0) {return this};
 
@@ -66,6 +75,20 @@ class DoublyLinkedList {
         return this;
     }
 
+    // O(N)
+    search(value) {
+        let position = 0;
+        let currentNode = this.head;
+        while (currentNode !== null) {
+            if (currentNode.value === value) {
+                return position;
+            }
+            currentNode = currentNode.next;
+            position++;
+        }
+        return -1;
+    }
+
     prepend(value) {
         let node = new Node(value);
         if (this._isEmpty()) {
@@ -106,12 +129,25 @@ class DoublyLinkedList {
     }
 
     _getNodeAtIndex(index) {
-        let currentNode = this.head;
-        let position = 0;
-        while (position < index) {
+        let distanceFromHead = index - 1;
+        let distanceFromTail = this.length - index;
+        if (distanceFromHead < distanceFromTail) {
+          position = 0;
+          currentNode = this.head;
+          while (position < index) {
             currentNode = currentNode.next;
             position++;
+          }
+          return currentNode;
         }
-        return currentNode;
-    }    
+        else {
+          position = this.length - 1;
+          currentNode = this.tail;
+          while (position > index) {
+            currentNode = currentNode.previous;
+            position--;
+          }
+          return currentNode;
+        }
+      }
 }
