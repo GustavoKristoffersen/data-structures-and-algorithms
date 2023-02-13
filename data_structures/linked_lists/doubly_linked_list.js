@@ -59,7 +59,6 @@ class DoublyLinkedList {
         else if (index === 0){
             this.head = this.head.next;
             this.head.previous = null;
-            this.head.next.previous = this.head;
         }
         else {
             let leftNode = this._getNodeAtIndex(index - 1);
@@ -86,7 +85,7 @@ class DoublyLinkedList {
             currentNode = currentNode.next;
             position++;
         }
-        return -1;
+        return null;
     }
 
     prepend(value) {

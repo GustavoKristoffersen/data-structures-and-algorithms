@@ -48,7 +48,6 @@ class DoublyLinkedList:
         if index == 0:
             self.head = self.head.next
             self.head.previous = None
-            self.head.next.previous = self.head.next
         else:
             left_node = self._get_node_at_index(index - 1)
             node_to_delete = left_node.next
@@ -69,7 +68,7 @@ class DoublyLinkedList:
                 return position
             current_node = current_node.next
             position += 1
-        return -1
+        return None
 
     def prepend(self, value):
         node = Node(value)

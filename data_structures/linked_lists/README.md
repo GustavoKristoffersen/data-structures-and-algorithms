@@ -53,6 +53,6 @@ Example: deleting the element at index 3 in the element
 
 # :bookmark_tabs: Doubly Linked List
 
-A doubly linked list follow the same principles as a classic linked list, with the exception that is holds references to both the next and the previous elements in the list. This allows faster traversing since, if we know index that we need to visit, we can decide if we will start from the tail node or from the head node.
+A doubly linked list follow the same principles as a classic linked list, with the exception that is holds references to both the next and the previous elements in the list. This allows faster traversing since, if we know index that we need to visit, we can decide if we will start from the tail node or from the head node. This change is reflected in the way the the method ```_get_node_at_index``` works.
 
 ![alt text](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/03/DLL1.png)
