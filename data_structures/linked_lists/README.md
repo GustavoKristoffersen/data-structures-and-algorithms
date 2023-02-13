@@ -18,9 +18,9 @@ Example: read the element at index 3 in the linked list bellow:
 ![alt text](../../extras/images/linked-list-access.gif)
 
 
-## :bookmark_tabs: Insertion - O(N)
+## :bookmark_tabs: Insertion - O(N) or O(1)
 
-Inserting a new element in a linked list also takes O(N) in a worst case scenario. This is because it also needs to traverse the linekd list until the index where the element needs to be inserted. However, if the element is to be inserted in the end or in the beginning of the list it is performed in constant time, O(1), since we already have access to the previous element (head if it's at the beginning and tail if it's at the end), so all we need to do is link the new element with the previous one.
+Inserting a new element in a linked list also takes O(N) in a worst case scenario. This is because it also needs to traverse the linekd list until the index where the element needs to be inserted. However, the insertion itself only takes O(1), since we only need to link the new element with its neighbour ones. So if we already have access to the previous element, we can insert the new element in constant time. This is why a lot of authors consider insertion to be O(1).
 
 Example: inserting at the beginning of the list O(1):
 
