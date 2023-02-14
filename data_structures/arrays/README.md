@@ -30,7 +30,7 @@ Example: if we have the array ```[1, 20, 5, 78, 30]``` and we want to delete the
 
 
 ### :bookmark_tabs: Searching O(N)
-Actually, searching for an element in an array depends on the type of the array and also the algorithm used to perform the search. If the array is ordered, we can use [Bubble Sort](https://github.com/GustavoKristoffersen/data-structures-and-algorithms/tree/main/algorithms/searching/binary_search) algorithm which has an efficiency of O(log N). If the array is unordered we can use a [Linear Search](https://github.com/GustavoKristoffersen/data-structures-and-algorithms/tree/main/algorithms/searching/linear_search) which has an efficiency of O(N). Since the arrays here are all unordered, the search efficiency will be O(N).
+Actually, searching for an element in an array depends on the type of the array and also the algorithm used to perform the search. If the array is ordered, we can use [Binary Search](https://github.com/GustavoKristoffersen/data-structures-and-algorithms/tree/main/algorithms/searching/binary_search) algorithm which has an efficiency of O(log N). If the array is unordered we can use a [Linear Search](https://github.com/GustavoKristoffersen/data-structures-and-algorithms/tree/main/algorithms/searching/linear_search) which has an efficiency of O(N). Since the arrays here are all unordered, the search efficiency will be O(N).
 
 
 ## Static Arrays vs Dynamic Arrays
