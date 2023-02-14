@@ -10,6 +10,3 @@ Visualizations:
 
 
 ![alt text](../../../extras/images/bubble-sort-2.gif)
-
-
-![alt text](../../../extras/images/bubble-sort-3.gif)
