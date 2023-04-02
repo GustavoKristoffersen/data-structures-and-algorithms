@@ -6,6 +6,8 @@ Hash tables allow fast lookups, insertions, and deletions, with an average time 
 
 In case of collisions, one of the most used ways of handling them is by using a technique called Chaining, which basically means that all keys that map to the same memory space will be chained in a single array, usually using a linked list. When this happens, the time complexity for accessing that specific key can become O(N).
 
+Hash tables usually allocates a little bit more more space in memory than necessary so that it avoids frequent resizes. A hash table is resized when there's no more space left for new items. When it happens a new array, usually with the double of the size, is created and all items are replaced and rehashed. Resizing a hash table can be an expensive operation, as it involves copying all existing items to their new positions in the larger array. To avoid frequent resizes, hash tables are typically designed to be more space-efficient than other data structures, allocating more space than necessary to reduce the likelihood of collisions and the need for frequent resizes.
+
 ![alt text](../../extras/images/hash-table.png)
 
 # :bookmark_tabs: Reading, Insertion, Deletion and Search O(1)

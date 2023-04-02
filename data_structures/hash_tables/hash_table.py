@@ -24,6 +24,16 @@ class HashTable:
                 if k == key:
                     return v
         return None
+    
+    def delete(self, key):
+        address = self._hash(key)
+        bucket = self.data[address]
+        if bucket:
+            for i in range(len(bucket)):
+                if bucket[i][0] == key:
+                    del bucket[i]
+                    return True
+        return False
 
     def keys(self):
         keys = []

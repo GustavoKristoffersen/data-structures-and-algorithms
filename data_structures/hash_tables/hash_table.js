@@ -33,6 +33,21 @@ class HashTable {
         return undefined;
     }
 
+    delete(key) {
+        let address = this._hash(key);
+        let bucket = this.data[address];
+        if (bucket) {
+            for (let i=0; i < bucket.length; i++) {
+                if (bucket[i][0] === key) {
+                    let removedValue = bucket[i][1];
+                    bucket.splice(i, 1);
+                    return removedValue;
+                }
+            }
+        }
+        return undefined;
+    }
+
     keys() {
         const keys = [];
         for (let i=0; i < this.data.length; i++) {
