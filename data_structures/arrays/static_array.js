@@ -4,29 +4,24 @@ const {linearSearch} = require('../../algorithms/searching/linear_search/linear_
 class StaticArray {
     constructor(length) {
         this.length = length;
-        this.last_position = -1;
         this.values = new Array(length).fill(null);
     }
 
-    add(value) {
-        // no space left
-        if (this.last_position === this.length - 1) {
-            return null;
+    // O(1)
+    insert(index, value) {
+        if (index >= this.length) {
+          return null;
         }
-        this.last_position += 1;
-        this.values[this.last_position] = value;
+        this.values[index] = value;
         return this;
     }
-
-    delete(value) {
-        let p = linearSearch(value);
-        if (p === -1) {
-            return -1;
+      
+    // O(1)
+    delete(index) {
+        if (index >= this.length) {
+            return null;
         }
-        for (let i = p; i < this.last_position; i++) {
-            this.values[i] = this.values[i + 1];
-        }
-        this.last_position--;
+        this.values[index] = null;
         return this;
     }
 
