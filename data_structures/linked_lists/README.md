@@ -15,7 +15,7 @@ Reading from a linked list has an efficiency of O(N) because, in contrast with a
 
 Example: read the element at index 3 in the linked list bellow:
 
-![alt text](../../extras/images/linked-list-access.gif)
+![alt text](../../statics/images/linked-list-access.gif)
 
 
 ## :bookmark_tabs: Insertion - O(N) or O(1)
@@ -24,15 +24,15 @@ Inserting a new element in a linked list also takes O(N) in a worst case scenari
 
 Example: inserting at the beginning of the list O(1):
 
-![alt text](../../extras/images/linked-list-insertion-at-beginning.gif)
+![alt text](../../statics/images/linked-list-insertion-at-beginning.gif)
 
 Example 2: inserting at the end of the list O(1):
 
-![alt text](../../extras/images/linked-list-insertion-at-the-end.gif)
+![alt text](../../statics/images/linked-list-insertion-at-the-end.gif)
 
 Example 3: inserting in the middle of the list (index 4 in this case) O(N):
 
-![alt text](../../extras/images/linked-list-insertion-at-the-middle.gif)
+![alt text](../../statics/images/linked-list-insertion-at-the-middle.gif)
 
 
 ### :bookmark_tabs: Search - O(N)
@@ -40,7 +40,7 @@ Searching in a linked list also takes O(N), since it's basically traverse a list
 
 Example: searching for the element with value of 6 in the list:
 
-![alt text](../../extras/images/linked-list-access.gif)
+![alt text](../../statics/images/linked-list-access.gif)
 
 
 ## :bookmark_tabs: Deletion - O(N)
@@ -48,7 +48,7 @@ Deletion also takes O(N), since we need to traverse to the element to be deleted
 
 Example: deleting the element at index 3 in the element
 
-![alt text](../../extras/images/linked-list-deletion.gif)
+![alt text](../../statics/images/linked-list-deletion.gif)
 
 
 # :bookmark_tabs: Doubly Linked List

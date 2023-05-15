@@ -7,7 +7,7 @@ As mentioned, stacks are built on top of other data structures, which are usuall
 Some real world applications of stacks include linters (code validators), the “undo” feature of a word processor (ctrl + z) and browser history (previous page). As you can see, stacks are usually a great option for storing temporary data while maintaining its order over time.
 
 
-![alt text](../../extras/images/stack.gif)
+![alt text](../../statics/images/stack.gif)
 
 # :bookmark_tabs: Reading - O(1)
 
@@ -17,11 +17,11 @@ Reading from a stack is always constant time, since only the top element can be 
 
 Inserting new elements on a stack will always be constant time, since adding new elements at the end of arrays and linked lists are always done in a single step.
 
-![alt text](../../extras/images/stack-insertion.gif)
+![alt text](../../statics/images/stack-insertion.gif)
 
 # :bookmark_tabs: Deletion - O(1)
 
 Removing elements from stacks will always be constant time, since removing the top element, the last one, from arrays and linked lists are always done in a single step.
 
 
-![alt text](../../extras/images/stack-deletion.gif)
+![alt text](../../statics/images/stack-deletion.gif)

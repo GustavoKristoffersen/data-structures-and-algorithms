@@ -7,7 +7,7 @@ As mentioned, queues are built on top of other data structures, which are usuall
 Real-world applications of queues include managing asynchronous requests, print queues, and call center waitlists. As you can see, queues are usually a great option for storing temporary data while maintaining its order over time.
 
 
-![alt text](../../extras/images/queue.gif)
+![alt text](../../statics/images/queue.gif)
 
 
 # :bookmark_tabs: Reading - O(1)
@@ -18,11 +18,11 @@ Reading from a queue is always constant time, since only the front element can b
 
 Inserting new elements on a queue will always be constant time, since adding new elements at the back of linked lists is also constant time.
 
-![alt text](../../extras/images/queue-insertion.gif)
+![alt text](../../statics/images/queue-insertion.gif)
 
 # :bookmark_tabs: Deletion - O(1)
 
 Removing elements from queues will always be constant time, since removing the front element from linked lists is done in a single step.
 
 
-![alt text](../../extras/images/queue-deletion.gif)
+![alt text](../../statics/images/queue-deletion.gif)

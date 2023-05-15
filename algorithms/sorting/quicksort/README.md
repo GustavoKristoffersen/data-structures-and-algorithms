@@ -11,6 +11,6 @@ Then, we recursively apply the same process to the subarrays to the left and rig
 We repeat this process until the base case of a single-element array is reached for all subarrays, at which point the entire array is sorted.
 
 
-![alt text](../../../extras/images/quicksort.gif)
+![alt text](../../../statics/images/quicksort.gif)
 
-![alt text](../../../extras/images/quicksort-2.gif)
+![alt text](../../../statics/images/quicksort-2.gif)

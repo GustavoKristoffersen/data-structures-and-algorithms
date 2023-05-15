@@ -8,6 +8,6 @@ We repeat this process recursively until we have a single sorted array that cont
 
 Visualizations:
 
-![alt text](../../../extras/images/merge-sort.gif)
+![alt text](../../../statics/images/merge-sort.gif)
 
-![alt text](../../../extras/images/merge-sort-2.gif)
+![alt text](../../../statics/images/merge-sort-2.gif)

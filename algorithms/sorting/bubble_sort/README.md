@@ -6,7 +6,7 @@ It keeps repeating the same process until the array is fully sorted.
 
 Visualizations:
 
-![alt text](../../../extras/images/bubble-sort.gif)
+![alt text](../../../statics/images/bubble-sort.gif)
 
 
-![alt text](../../../extras/images/bubble-sort-2.gif)
+![alt text](../../../statics/images/bubble-sort-2.gif)

@@ -8,17 +8,17 @@ In case of collisions, one of the most used ways of handling them is by using a 
 
 Hash tables usually allocate a bit more of space in memory than necessary so that it can avoid frequent resizes. A hash table is resized when there's no more space left for new items. When it happens a new array, usually with the double of the current size, is created and all items are replaced and rehashed. Resizing a hash table can be an expensive operation, as it involves copying all existing items to their new positions in the larger array. To avoid frequent resizes, hash tables are typically designed to be more space-efficient than other data structures, allocating more space than necessary to reduce the likelihood of collisions and the need for frequent resizes.
 
-![alt text](../../extras/images/hash-table.png)
+![alt text](../../statics/images/hash-table.png)
 
 # :bookmark_tabs: Reading, Insertion, Deletion and Search O(1)
 
 Since a hash table generates the index for each item of the hash table and direct access in arrays is always constant time, O(1), every operation in a hash table will have a time complexity of O(1), except, as mentioned previously, when collisions occur, which can lead to a worst-case of O(n). The time taken by the hash function to map a key to a index is usually ignored in most cases where it is considered to have a highly efficient hash function.
 
 ### Hash table insertion animation
-![alt text](../../extras/images/hash-table-insertion.gif)
+![alt text](../../statics/images/hash-table-insertion.gif)
 
 ### Hash table deletion animation
-![alt text](../../extras/images/hash-table-deletion.gif)
+![alt text](../../statics/images/hash-table-deletion.gif)
 
 ### Hash table search animation
-![alt text](../../extras/images/hash-table-search.gif)
+![alt text](../../statics/images/hash-table-search.gif)

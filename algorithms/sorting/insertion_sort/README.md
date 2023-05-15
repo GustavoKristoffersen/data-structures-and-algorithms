@@ -7,6 +7,6 @@ We repeat this process for every other item in the array.
 
 Visualizations:
 
-![alt text](../../../extras/images/insertion-sort.gif)
+![alt text](../../../statics/images/insertion-sort.gif)
 
-![alt text](../../../extras/images/insertion-sort-2.gif)
+![alt text](../../../statics/images/insertion-sort-2.gif)
