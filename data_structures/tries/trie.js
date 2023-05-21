@@ -41,7 +41,6 @@ class Trie {
         }
         return currentNode;
     }
-
     
     autoComplete(word) {
         let currentNode = this.search(word);
