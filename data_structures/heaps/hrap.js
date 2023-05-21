@@ -1,4 +1,4 @@
-class Heap {
+class MaxHeap {
     constructor() {
         this.data = [];
         this.length = 0;

@@ -1,4 +1,4 @@
-class Heap:
+class MaxHeap:
     def __init__(self):
         self.data = []
         self.length = 0
