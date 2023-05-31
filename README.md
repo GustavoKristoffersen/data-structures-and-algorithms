@@ -12,7 +12,9 @@ All contents here were based in following sources:
 
 3 - [This course](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms) - Udemy course
 
-4 - Other additional resources that i link in the explanation readmes of some implementations.
+4 - [This playlist](https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P) - Youtube playlist
+
+5 - Other additional resources that i link in the explanation readmes of some implementations.
 
 
 Most of the animations were generated using the site: [VisuAlgo](https://visualgo.net)
