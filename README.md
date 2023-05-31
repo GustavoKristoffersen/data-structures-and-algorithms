@@ -19,3 +19,9 @@ Most of the animations were generated using the site: [VisuAlgo](https://visualg
 
 A cheat sheet to quickly visualize the time and space complexity of most known data structures and algorithms: [Big-O cheat sheet](https://www.bigocheatsheet.com/)
 
+
+![alt text](/statics/images/big-o.jpg)
+
+
+![alt text](/statics/images/time-complexities.jpg)
+
